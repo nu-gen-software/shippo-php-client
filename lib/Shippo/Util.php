@@ -32,7 +32,7 @@ abstract class Shippo_Util
         $results = array();
         foreach ($values as $k => $v) {
             // FIXME: this is an encapsulation violation
-            if ($k[0] == '_') {
+            if (is_array($k) && $k[0] == '_') {
                 continue;
             }
             if ($v instanceof Shippo_Object) {
